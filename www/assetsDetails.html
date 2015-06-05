@@ -10,7 +10,7 @@
     <script src="js/1.7.2jquery.min.js"></script>
     <script src="styles/respond.min.js"></script>
     <script src="js/MicrosoftAjax.js"></script>
-    <script src="http://192.168.2.13:8010/Services/AssetsTackService.svc/js"></script>
+    <script src="http://192.168.2.13:8020/Services/AssetsTackService.svc/js"></script>
     <!--<script src="http://117.247.182.228:8010/Services/AssetsTackService.svc/js"></script>-->
     <script>
         function getParameterByName(name) {
@@ -33,13 +33,15 @@
             $(".assets-SubLocation").html(getParameterByName('SubLocation'));
             $(".assets-SubSubLocation").html(getParameterByName('SubSubLocation'));
             $(".assets-UsefulLife").html(getParameterByName('UsefulLife'));
+            $(".assets-ResidualValue").html(getParameterByName('ResidualValue'));
+            $(".assets-ResidualPercentage").html(getParameterByName('ResidualPercentage'));
 
             $("#btnEdit").click(function () {
                 window.location = "editasset.html?ID=" + getParameterByName('ID') + "&AssetsName=" + getParameterByName('AssetsName') +
                            "&AssetGroup=" + getParameterByName('AssetGroup') + "&AssetGroupID=" + getParameterByName('AssetGroupID') + "&AssetPurchaseDate=" + getParameterByName('AssetPurchaseDate') + "&AssetPurchaseValue=" + getParameterByName('AssetPurchaseValue')
                        + "&AssetSerialNumber=" + getParameterByName('AssetSerialNumber') + "&AssetImage" + getParameterByName('AssetImage')
                 + "&DepreciationRate=" + getParameterByName('DepreciationRate') + "&Location=" + getParameterByName('Location') + "&MethodOfDepreciation=" + getParameterByName('MethodOfDepreciation')
-                    + "&SubLocation=" + getParameterByName('SubLocation') + "&SubSubLocation=" + getParameterByName('SubSubLocation') + "&UsefulLife=" + getParameterByName('UsefulLife');
+                    + "&SubLocation=" + getParameterByName('SubLocation') + "&SubSubLocation=" + getParameterByName('SubSubLocation') + "&UsefulLife=" + getParameterByName('UsefulLife') + "&ResidualValue=" + getParameterByName('ResidualValue') + "&ResidualPercentage=" + getParameterByName('ResidualPercentage');
             });
 
         });
@@ -175,6 +177,16 @@
             <div class="contentbox1">
                 <div class="groupname"><b>Asset UsefulLife</b> </div>
                 <div class="grp_name_box assets-UsefulLife">
+                </div>
+            </div>
+             <div class="contentbox1">
+                <div class="groupname"><b>Asset Residual Value</b> </div>
+                <div class="grp_name_box assets-ResidualValue">
+                </div>
+            </div>
+             <div class="contentbox1">
+                <div class="groupname"><b>Asset Residual Percentage</b> </div>
+                <div class="grp_name_box assets-ResidualPercentage">
                 </div>
             </div>
 

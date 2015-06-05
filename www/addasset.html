@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title> Asset Track </title>
+    <title>Asset Track </title>
     <link rel="shortcut icon" href="images/icon.png">
     <link href="styles/boilerplate.css" rel="stylesheet" type="text/css">
     <link href="styles/style.css" rel="stylesheet" type="text/css">
@@ -19,7 +19,7 @@
     <!-- jQuery Form Validation code -->
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
     <script src="js/MicrosoftAjax.js"></script>
-    <script src="http://192.168.2.13:8010/Services/AssetsTackService.svc/js"></script>
+    <script src="http://192.168.2.13:8020/Services/AssetsTackService.svc/js"></script>
     <!--<script src="http://117.247.182.228:8010/Services/AssetsTackService.svc/js"></script>-->
     <script type="text/javascript" src="phonegap.js"></script>
     <script>
@@ -35,8 +35,8 @@
             {
                 quality: 50,
                 encodingType: Camera.EncodingType.JPEG,
-		targetWidth:300,
-		targetHeight:180,
+                targetWidth: 300,
+                targetHeight: 180,
                 destinationType: Camera.DestinationType.DATA_URL
             });
         }
@@ -126,6 +126,12 @@
                     },
                     UsefulLife: {
                         required: true
+                    },
+                    ResidualValue: {
+                        required: true
+                    },
+                    ResidualPercentage: {
+                        required: true
                     }
 
                 },
@@ -161,6 +167,12 @@
                     },
                     UsefulLife: {
                         required: "Enter Useful Life"
+                    },
+                    ResidualValue: {
+                        required: "Enter Residual Value"
+                    },
+                    ResidualPercentage: {
+                        required: "Enter Residual Percentage"
                     }
                 },
 
@@ -198,7 +210,9 @@
                         Location: $('#Location').val(),
                         SubLocation: $('#SubLocation').val(),
                         SubSubLocation: $('#SubSubLocation').val(),
-                        UsefulLife: $('#UsefulLife').val()
+                        UsefulLife: $('#UsefulLife').val(),
+                        ResidualValue: $('#ResidualValue').val(),
+                        ResidualPercentage: $('#ResidualPercentage').val()
                     }
                     var svc = new AssetsTackService();
                     //svc.GetAllAssetsGroups('harish', 'hari@4321', success, fail);
@@ -211,7 +225,7 @@
     </script>
 </head>
 
-<body style="background-color:#1d1d23">
+<body style="background-color: #1d1d23">
 
     <!-- gridcontainer clearfix starts from here -->
     <div class="gridContainer clearfix">
@@ -219,12 +233,16 @@
         <!-- groupname_header starts from here -->
         <div class="groupname_header">
             <a href="dashboard.html">
-                <div class="arrow"> <img src="images/arrow.png"> </div>
+                <div class="arrow">
+                    <img src="images/arrow.png">
+                </div>
             </a>
 
             Add Asset
             <div class="header_btns">
-                <div class="menu_icon"> <img src="images/power.png"> </div>
+                <div class="menu_icon">
+                    <img src="images/power.png">
+                </div>
             </div>
         </div>
         <!-- groupname_header ends here -->
@@ -232,25 +250,37 @@
         <div class="menu">
             <a href="dashboard.html">
                 <div class="menu_btn1">
-                    <img src="images/dashboard_blue.png"> <br><br> Dashboard
+                    <img src="images/dashboard_blue.png">
+                    <br>
+                    <br>
+                    Dashboard
                 </div>
             </a>
 
             <a href="myassets.html">
                 <div class="menu_btn2">
-                    <img src="images/assets.png"> <br><br> My Assets
+                    <img src="images/assets.png">
+                    <br>
+                    <br>
+                    My Assets
                 </div>
             </a>
 
             <a href="searchassets.html">
                 <div class="menu_btn3">
-                    <img src="images/search.png"> <br><br> Search Assets
+                    <img src="images/search.png">
+                    <br>
+                    <br>
+                    Search Assets
                 </div>
             </a>
 
             <a href="addasset.html">
                 <div class="menu_btn4">
-                    <img src="images/import_white.png"> <br><br> <span style="color:#FFF">Import/Export</span>
+                    <img src="images/import_white.png">
+                    <br>
+                    <br>
+                    <span style="color: #FFF">Import/Export</span>
                 </div>
             </a>
 
@@ -262,7 +292,7 @@
         <div class="box_group">
 
             <form>
-                <img id="assetImage" alt="Asset Image" style="display:none;">
+                <img id="assetImage" alt="Asset Image" style="display: none;">
 
                 <select class="dropdown_box8" name="selectgroup" id="selectgroup"></select>
 
@@ -306,6 +336,14 @@
                     <input name="UsefulLife" id="UsefulLife" type="text" class="txt_box9" placeholder="Useful Life">
                 </div>
 
+                <div class="name">
+                    <input name="ResidualValue" id="ResidualValue" type="text" class="txt_box9" placeholder="Residual Value">
+                </div>
+
+                <div class="name">
+                    <input name="ResidualPercentage" id="ResidualPercentage" type="text" class="txt_box9" placeholder="Residual Percentage">
+                </div>
+
                 <div onclick="takePicture();" class="addphotos">
                     Choose File
                 </div>
@@ -313,11 +351,11 @@
             </form>
 
             <div class="addgroup2">
-                <img src="images/tick.png"> &nbsp; <b>Use Geolocation</b>
+                <img src="images/tick.png">
+                &nbsp; <b>Use Geolocation</b>
             </div>
 
             <input id="btnSignIn" type="button" class="addgroup3" value="Save">
-
         </div>
 
     </div>

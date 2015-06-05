@@ -11,7 +11,7 @@
     <script src="styles/respond.min.js"></script>
     <script src="js/MicrosoftAjax.js"></script>
     <!--<script src="http://117.247.182.228:8010/Services/AssetsTackService.svc/js"></script>-->
-    <script src="http://192.168.2.13:8010/Services/AssetsTackService.svc/js"></script>
+    <script src="http://192.168.2.13:8020/Services/AssetsTackService.svc/js"></script>
     <script>
         function getParameterByName(name) {
             name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -49,6 +49,8 @@
                     $(".assets-SubLocation").html(assetsData[i].SubLocation);
                     $(".assets-SubSubLocation").html(assetsData[i].SubSubLocation);
                     $(".assets-UsefulLife").html(assetsData[i].UsefulLife);
+                    $(".assets-ResidualValue").html(assetsData[i].ResidualValue);
+                    $(".assets-ResidualPercentage").html(assetsData[i].ResidualPercentage);
                 }
             }
             else {
@@ -66,7 +68,7 @@
                            "&AssetGroup=" + $(".assets-Group").text() + "&AssetGroupID=" + $(".assets-Group").attr("group-id") + "&AssetPurchaseDate=" + $(".assets-PurchaseDate").text() + "&AssetPurchaseValue=" + $(".assets-PurchaseValue").text()
                        + "&AssetSerialNumber=" + $(".assets-SerialNumber").text() + "&AssetImage" + $("#assetImg").attr("src") + "&DepreciationRate=" + $(".assets-DepreciationRate").text()
                        + "&Location=" + $(".assets-Location").text() + "&MethodOfDepreciation=" + $(".assets-MethodOfDepreciation").text() + "&SubLocation=" + $(".assets-SubLocation").text()
-                       + "&SubSubLocation=" + $(".assets-SubSubLocation").text() + "&UsefulLife=" + $(".assets-UsefulLife").text();
+                       + "&SubSubLocation=" + $(".assets-SubSubLocation").text() + "&UsefulLife=" + $(".assets-UsefulLife").text() + "&ResidualValue=" + $(".assets-ResidualValue").text() + "&ResidualPercentage=" + $(".assets-ResidualPercentage").text();
             });
         });
 
@@ -203,7 +205,15 @@
                 <div class="grp_name_box assets-UsefulLife">
                 </div>
             </div>
-
+            <div class="contentbox1">
+                <div class="groupname"><b>Asset Residual Value</b> </div>
+                <div class="grp_name_box assets-ResidualValue">
+                </div>
+            </div>
+             <div class="contentbox1">
+                <div class="groupname"><b>Asset Residual Percentage</b> </div>
+                <div class="grp_name_box assets-ResidualPercentage">
+                </div>
 
         </div>
         <!-- content box ends here -->
