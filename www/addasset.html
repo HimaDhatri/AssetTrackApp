@@ -92,7 +92,7 @@
         $(function () {
             $("#datepicker").datepicker({ dateFormat: 'dd-mm-yy' });
             var svc = new AssetsTackService();
-            svc.GetAllAssetsGroups('harish', 'hari@4321', groupSuccess, groupFail);
+            svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"), groupSuccess, groupFail);
             // Setup form validation on the #register-form element
             $("form").validate({
                 // Specify the validation rules
@@ -216,7 +216,7 @@
                     }
                     var svc = new AssetsTackService();
                     //svc.GetAllAssetsGroups('harish', 'hari@4321', success, fail);
-                    svc.addAssets("harish", "hari@4321", asset, success, fail);
+                    svc.addAssets(window.localStorage.getItem("username"), window.localStorage.getItem("password"), asset, success, fail);
                 }
             });
 

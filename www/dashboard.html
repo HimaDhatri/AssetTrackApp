@@ -47,11 +47,12 @@
             debugger;
             //spinnerplugin.show();
             var svc = new AssetsTackService();
-            svc.GetAllAssetsGroups('harish', 'hari@4321', success, fail);
+            svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"), success, fail);
         });
     </script>
 </head>
 <body style="background-color: #1d1d23">
+    
     <!-- gridcontainer clearfix starts from here -->
     <div class="gridContainer clearfix">
 

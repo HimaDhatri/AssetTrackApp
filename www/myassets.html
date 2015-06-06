@@ -68,7 +68,7 @@
                 groupName = '';
             }
             $('#groupHeader').html(groupName);
-            svc.GetAssetsByGroup('harish', 'hari@4321', groupID, success, fail);
+            svc.GetAssetsByGroup(window.localStorage.getItem("username"), window.localStorage.getItem("password"), groupID, success, fail);
         });
     </script>
 </head>

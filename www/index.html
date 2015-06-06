@@ -32,6 +32,8 @@
             var response = JSON.parse(result.toString());
             if (response.requestState) {
                 $("#signInError").hide();
+                window.localStorage.setItem("username", $("#email").val());
+                window.localStorage.setItem("password", $("#password").val());
                 window.location = "dashboard.html";
             }
             else {

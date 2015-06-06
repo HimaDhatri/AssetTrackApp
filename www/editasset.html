@@ -97,7 +97,7 @@
         $(function () {
             $("#datepicker").datepicker({ dateFormat: 'dd-mm-yy' });
             var svc = new AssetsTackService();
-            svc.GetAllAssetsGroups('harish', 'hari@4321', groupSuccess, groupFail);
+            svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"), groupSuccess, groupFail);
             //$("#assetImg").attr("src", getParameterByName('AssetImage'));
             $('#assetsID').val(getParameterByName('ID'));
             $('#Name').val(getParameterByName('AssetsName'));
@@ -229,7 +229,7 @@
                     }
                 }
                 var svc = new AssetsTackService();
-                svc.editAssets("harish", "hari@4321", asset, success, fail);
+                svc.editAssets(window.localStorage.getItem("username"), window.localStorage.getItem("password"), asset, success, fail);
             });
 
         });

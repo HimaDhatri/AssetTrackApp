@@ -61,7 +61,7 @@
             var svc = new AssetsTackService();
             var QrCode = getParameterByName('ScanCode');
 
-            svc.GetAssetsByQRCode('harish', 'hari@4321', QrCode, success, fail);
+            svc.GetAssetsByQRCode(window.localStorage.getItem("username"), window.localStorage.getItem("password"), QrCode, success, fail);
 
             $("#btnEdit").click(function () {
                 window.location = "editasset.html?ID=" + $(".assets-name").attr("asset-id") + "&AssetsName=" + $(".assets-name").text() +
