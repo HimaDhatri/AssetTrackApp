@@ -20,28 +20,32 @@
             return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
         }
         $(function () {
-            $("#assetImg").attr("src", getParameterByName('AssetImage'));
-            $(".assets-name").html(getParameterByName('AssetsName'));
-            $(".assets-Group").html(getParameterByName('AssetGroup'));
-            $(".assets-PurchaseDate").html(getParameterByName('AssetPurchaseDate'));
-            $(".assets-PurchaseValue").html(getParameterByName('AssetPurchaseValue'));
-            $(".assets-SerialNumber").html(getParameterByName('AssetSerialNumber'));
+            var assetDetails = JSON.parse(window.localStorage.getItem("assetDetails"));
 
-            $(".assets-DepreciationRate").html(getParameterByName('DepreciationRate'));
-            $(".assets-Location").html(getParameterByName('Location'));
-            $(".assets-MethodOfDepreciation").html(getParameterByName('MethodOfDepreciation'));
-            $(".assets-SubLocation").html(getParameterByName('SubLocation'));
-            $(".assets-SubSubLocation").html(getParameterByName('SubSubLocation'));
-            $(".assets-UsefulLife").html(getParameterByName('UsefulLife'));
-            $(".assets-ResidualValue").html(getParameterByName('ResidualValue'));
-            $(".assets-ResidualPercentage").html(getParameterByName('ResidualPercentage'));
+            $("#assetImg").attr("src", assetDetails.AssetImage);
+            $(".assets-name").html(assetDetails.AssetsName);
+            $(".assets-Group").html(assetDetails.AssetGroup);
+            $(".assets-PurchaseDate").html(assetDetails.AssetGroup);
+            $(".assets-PurchaseValue").html(assetDetails.AssetPurchaseValue);
+            $(".assets-SerialNumber").html(assetDetails.AssetSerialNumber);
+
+            $(".assets-DepreciationRate").html(assetDetails.DepreciationRate);
+            $(".assets-Location").html(assetDetails.Location);
+            $(".assets-MethodOfDepreciation").html(assetDetails.MethodOfDepreciation);
+            $(".assets-SubLocation").html(assetDetails.SubLocation);
+            $(".assets-SubSubLocation").html(assetDetails.SubSubLocation);
+            $(".assets-UsefulLife").html(assetDetails.UsefulLife);
+            $(".assets-ResidualValue").html(assetDetails.ResidualValue);
+            $(".assets-ResidualPercentage").html(assetDetails.ResidualPercentage);
 
             $("#btnEdit").click(function () {
-                window.location = "editasset.html?ID=" + getParameterByName('ID') + "&AssetsName=" + getParameterByName('AssetsName') +
-                           "&AssetGroup=" + getParameterByName('AssetGroup') + "&AssetGroupID=" + getParameterByName('AssetGroupID') + "&AssetPurchaseDate=" + getParameterByName('AssetPurchaseDate') + "&AssetPurchaseValue=" + getParameterByName('AssetPurchaseValue')
-                       + "&AssetSerialNumber=" + getParameterByName('AssetSerialNumber') + "&AssetImage" + getParameterByName('AssetImage')
-                + "&DepreciationRate=" + getParameterByName('DepreciationRate') + "&Location=" + getParameterByName('Location') + "&MethodOfDepreciation=" + getParameterByName('MethodOfDepreciation')
-                    + "&SubLocation=" + getParameterByName('SubLocation') + "&SubSubLocation=" + getParameterByName('SubSubLocation') + "&UsefulLife=" + getParameterByName('UsefulLife') + "&ResidualValue=" + getParameterByName('ResidualValue') + "&ResidualPercentage=" + getParameterByName('ResidualPercentage');
+                
+                window.location = "editasset.html";
+                //window.location = "editasset.html?ID=" + getParameterByName('ID') + "&AssetsName=" + getParameterByName('AssetsName') +
+                //           "&AssetGroup=" + getParameterByName('AssetGroup') + "&AssetGroupID=" + getParameterByName('AssetGroupID') + "&AssetPurchaseDate=" + getParameterByName('AssetPurchaseDate') + "&AssetPurchaseValue=" + getParameterByName('AssetPurchaseValue')
+                //       + "&AssetSerialNumber=" + getParameterByName('AssetSerialNumber') + "&AssetImage" + getParameterByName('AssetImage')
+                //+ "&DepreciationRate=" + getParameterByName('DepreciationRate') + "&Location=" + getParameterByName('Location') + "&MethodOfDepreciation=" + getParameterByName('MethodOfDepreciation')
+                //    + "&SubLocation=" + getParameterByName('SubLocation') + "&SubSubLocation=" + getParameterByName('SubSubLocation') + "&UsefulLife=" + getParameterByName('UsefulLife') + "&ResidualValue=" + getParameterByName('ResidualValue') + "&ResidualPercentage=" + getParameterByName('ResidualPercentage');
             });
 
         });

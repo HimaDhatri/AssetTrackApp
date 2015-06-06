@@ -30,6 +30,7 @@
         }
         function success(result) {
             debugger;
+            var assetDetails = JSON.parse(window.localStorage.getItem("assetDetails"));
 
             var response = JSON.parse(result.toString());
             if (response.requestState) {
@@ -64,11 +65,32 @@
             svc.GetAssetsByQRCode(window.localStorage.getItem("username"), window.localStorage.getItem("password"), QrCode, success, fail);
 
             $("#btnEdit").click(function () {
-                window.location = "editasset.html?ID=" + $(".assets-name").attr("asset-id") + "&AssetsName=" + $(".assets-name").text() +
-                           "&AssetGroup=" + $(".assets-Group").text() + "&AssetGroupID=" + $(".assets-Group").attr("group-id") + "&AssetPurchaseDate=" + $(".assets-PurchaseDate").text() + "&AssetPurchaseValue=" + $(".assets-PurchaseValue").text()
-                       + "&AssetSerialNumber=" + $(".assets-SerialNumber").text() + "&AssetImage" + $("#assetImg").attr("src") + "&DepreciationRate=" + $(".assets-DepreciationRate").text()
-                       + "&Location=" + $(".assets-Location").text() + "&MethodOfDepreciation=" + $(".assets-MethodOfDepreciation").text() + "&SubLocation=" + $(".assets-SubLocation").text()
-                       + "&SubSubLocation=" + $(".assets-SubSubLocation").text() + "&UsefulLife=" + $(".assets-UsefulLife").text() + "&ResidualValue=" + $(".assets-ResidualValue").text() + "&ResidualPercentage=" + $(".assets-ResidualPercentage").text();
+
+                var assetDetails = {
+                    ID: $(".assets-name").attr("asset-id"),
+                    AssetsName: $(".assets-name").text(),
+                    AssetGroup: $(".assets-Group").text(),
+                    AssetGroupID: $(".assets-Group").attr("group-id"),
+                    AssetPurchaseDate: $(".assets-PurchaseDate").text(),
+                    AssetPurchaseValue: $(".assets-PurchaseValue").text(),
+                    AssetSerialNumber: $(".assets-SerialNumber").text(),
+                    AssetImage: $("#assetImg").attr("src"),
+                    DepreciationRate: $(".assets-DepreciationRate").text(),
+                    Location: $(".assets-Location").text(),
+                    MethodOfDepreciation: $(".assets-MethodOfDepreciation").text(),
+                    SubLocation: $(".assets-SubLocation").text(),
+                    SubSubLocation: $(".assets-SubSubLocation").text(),
+                    UsefulLife: $(".assets-UsefulLife").text(),
+                    ResidualValue: $(".assets-ResidualValue").text(),
+                    ResidualPercentage: $(".assets-ResidualPercentage").text()
+
+                };
+                window.location = "editasset.html";
+                //window.location = "editasset.html?ID=" + $(".assets-name").attr("asset-id") + "&AssetsName=" + $(".assets-name").text() +
+                //           "&AssetGroup=" + $(".assets-Group").text() + "&AssetGroupID=" + $(".assets-Group").attr("group-id") + "&AssetPurchaseDate=" + $(".assets-PurchaseDate").text() + "&AssetPurchaseValue=" + $(".assets-PurchaseValue").text()
+                //       + "&AssetSerialNumber=" + $(".assets-SerialNumber").text() + "&AssetImage" + $("#assetImg").attr("src") + "&DepreciationRate=" + $(".assets-DepreciationRate").text()
+                //       + "&Location=" + $(".assets-Location").text() + "&MethodOfDepreciation=" + $(".assets-MethodOfDepreciation").text() + "&SubLocation=" + $(".assets-SubLocation").text()
+                //       + "&SubSubLocation=" + $(".assets-SubSubLocation").text() + "&UsefulLife=" + $(".assets-UsefulLife").text() + "&ResidualValue=" + $(".assets-ResidualValue").text() + "&ResidualPercentage=" + $(".assets-ResidualPercentage").text();
             });
         });
 
