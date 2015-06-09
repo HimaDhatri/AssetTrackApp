@@ -59,7 +59,20 @@
             }
         }
 
-     
+        function scanSuccess(result) {
+            var response = JSON.parse(result.toString());
+            if (response.requestState) {
+                window.location = "searchassets.html";
+            }
+            else {
+                alert(response.result);
+            }
+        }
+
+        function scanFail(result) {
+            alert(result);
+        }
+
         $(function () {
             var svc = new AssetsTackService();
             var QrCode = getParameterByName('ScanCode');
@@ -99,17 +112,17 @@
                 var date = new Date();
                 var assetScan = {
                     ID: $(".assets-name").attr("asset-id"),
-                    AssetLastScanDate: date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear()
+                    AssetLastScanDate: date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear()
                 };
                 //alert(assetScan.AssetLastScanDate);
                 var svc = new AssetsTackService();
 
-                svc.updateLastScanDate(window.localStorage.getItem("username"), window.localStorage.getItem("password"), assetScan);
-                window.location = "searchassets.html";
+                svc.updateLastScanDate(window.localStorage.getItem("username"), window.localStorage.getItem("password"), assetScan, scanSuccess, scanFail);
+
             });
 
-        }); 
-                               
+        });
+
         function goBack() {
             window.history.back();
         }
@@ -182,7 +195,7 @@
         </div>
         <!-- menu ends here -->
         <div>
-            <img id="assetImg" alt="Asset Image" style="display:none" src="" />
+            <img id="assetImg" alt="Asset Image" style="display: none" src="" />
         </div>
         <!-- content box starts from here -->
         <div id="assetsList">
@@ -248,19 +261,19 @@
                 <div class="grp_name_box assets-ResidualValue">
                 </div>
             </div>
-             <div class="contentbox1">
+            <div class="contentbox1">
                 <div class="groupname"><b>Asset Residual Percentage</b> </div>
                 <div class="grp_name_box assets-ResidualPercentage">
                 </div>
 
+            </div>
+            <!-- content box ends here -->
+            <div class="fluid fttr">
+                <button id="btnConfirm" class="fluid Submit">Confirm</button>
+                <button onclick="window.location.href='searchassets.html';" class="fluid cancel">Cancel</button>
+
+            </div>
         </div>
-        <!-- content box ends here -->
-        <div class="fluid fttr">
-        <button id="btnConfirm" class="fluid Submit" >Confirm</button>
-         <button onclick="window.location.href='searchassets.html';" class="fluid cancel">Cancel</button>
-        
-        </div>
-    </div>
-    <!-- gridcontainer clearfix ends here -->
+        <!-- gridcontainer clearfix ends here -->
 </body>
 </html>
