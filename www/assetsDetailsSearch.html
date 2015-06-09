@@ -58,6 +58,8 @@
                 alert(response.result.toString());
             }
         }
+
+     
         $(function () {
             var svc = new AssetsTackService();
             var QrCode = getParameterByName('ScanCode');
@@ -92,8 +94,22 @@
                 //       + "&Location=" + $(".assets-Location").text() + "&MethodOfDepreciation=" + $(".assets-MethodOfDepreciation").text() + "&SubLocation=" + $(".assets-SubLocation").text()
                 //       + "&SubSubLocation=" + $(".assets-SubSubLocation").text() + "&UsefulLife=" + $(".assets-UsefulLife").text() + "&ResidualValue=" + $(".assets-ResidualValue").text() + "&ResidualPercentage=" + $(".assets-ResidualPercentage").text();
             });
-        });
 
+            $("#btnConfirm").click(function () {
+                var date = new Date();
+                var assetScan = {
+                    ID: $(".assets-name").attr("asset-id"),
+                    AssetLastScanDate: date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear()
+                };
+                //alert(assetScan.AssetLastScanDate);
+                var svc = new AssetsTackService();
+
+                svc.updateLastScanDate(window.localStorage.getItem("username"), window.localStorage.getItem("password"), assetScan);
+                window.location = "searchassets.html";
+            });
+
+        }); 
+                               
         function goBack() {
             window.history.back();
         }
@@ -240,7 +256,7 @@
         </div>
         <!-- content box ends here -->
         <div class="fluid fttr">
-        <button class="fluid Submit" >Confirm</button>
+        <button id="btnConfirm" class="fluid Submit" >Confirm</button>
          <button onclick="window.location.href='searchassets.html';" class="fluid cancel">Cancel</button>
         
         </div>
