@@ -13,6 +13,7 @@
     // Show a custom confirmation dialog
     //
     function showConfirm() {
+        alert("hello");
         navigator.notification.confirm(
             'Do you want to logout!', // message
              onConfirm,            // callback to invoke with index of button pressed
@@ -21,6 +22,7 @@
         );
     }
     $("#signout").click(function () {
+        
         showConfirm();
     });
 
