@@ -77,32 +77,17 @@
             });
 
             $("#btnSignIn").click(function () {
-                navigator.notification.confirm(
- 'Are you sure you want to logout?',
- function (button) {
-     if (button == "1" || button == 1) {
-         window.localStorage.removeItem("username");
-         window.localStorage.removeItem("password");
-         window.location = "index.html";
-     }
-     // alert( 'Success: ' + button );
- },
- 'Asset Track',
- 'Yes,No'
-);
+                $("#signInError").hide();
+                if ($("form").valid()) {
+                    spinnerplugin.show({
 
-                //    $("#signInError").hide();
-                //    if ($("form").valid()) {
-                //        spinnerplugin.show({
-
-                //            fullscreen: true,  // defaults to false
-                //        });
-                //        var svc = new AssetsTackService();
-                //        svc.ValidateLogin($("#email").val(), $("#password").val(), success, fail);
-                //    }
-                //});
-                //window.location = "addasset.html";
+                        fullscreen: true,  // defaults to false
+                    });
+                    var svc = new AssetsTackService();
+                    svc.ValidateLogin($("#email").val(), $("#password").val(), success, fail);
+                }
             });
+            //window.location = "addasset.html";
         });
     </script>
 
