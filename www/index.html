@@ -34,7 +34,7 @@
                 $("#signInError").hide();
                 window.localStorage.setItem("username", $("#email").val());
                 window.localStorage.setItem("password", $("#password").val());
-                window.location = "dashboard.html";
+                //window.location = "dashboard.html";
             }
             else {
                 $("#signInError").show();
@@ -74,8 +74,11 @@
             $("#btnSignIn").click(function () {
                 $("#signInError").hide();
                 if ($("form").valid()) {
+                    spinnerplugin.show({
+
+                        fullscreen: true,  // defaults to false
+                    });
                     var svc = new AssetsTackService();
-                    //spinnerplugin.show();
                     svc.ValidateLogin($("#email").val(), $("#password").val(), success, fail);
                 }
             });

@@ -40,6 +40,7 @@
                 destinationType: Camera.DestinationType.DATA_URL
             });
         }
+
         function fail(result) {
 
             try {
@@ -58,6 +59,7 @@
                 window.location = "dashboard.html";
             }
             else {
+                $('body').on('click', '#btnSignIn', addAsset);
                 $("#signInError").show();
             }
         }
@@ -84,6 +86,7 @@
                 $("#selectgroup").html(htmlData);
             }
             else {
+                $('body').on('click', '#btnSignIn', addAsset);
                 alert(response.result.toString());
             }
 
@@ -181,10 +184,9 @@
                 }
             });
 
-
-
-            $("#btnSignIn").click(function () {
+            function addAsset() {
                 if ($("form").valid()) {
+                    $('body').off('click', '#btnSignIn', addAsset);
                     var asset = {
                         //AssetsName: $('#Name').val(),
                         //AssetGroupID: Number($('#selectgroup').val()),
@@ -218,6 +220,12 @@
                     //svc.GetAllAssetsGroups('harish', 'hari@4321', success, fail);
                     svc.addAssets(window.localStorage.getItem("username"), window.localStorage.getItem("password"), asset, success, fail);
                 }
+            }
+
+            $('body').on('click', '#btnSignIn', addAsset);
+
+            $("#btnSignIn").click(function () {
+
             });
 
         });
@@ -350,7 +358,7 @@
                 <input name="choosefile" id="choosefile" class="addphotos" type="hidden" value="">
             </form>
 
-           <!-- <div class="addgroup2">
+            <!-- <div class="addgroup2">
                 <img src="images/tick.png">
                 &nbsp; <b>Use Geolocation</b>
             </div>-->
