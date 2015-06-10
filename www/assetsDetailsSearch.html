@@ -110,13 +110,19 @@
 
             $("#btnConfirm").click(function () {
                 var date = new Date();
+                dd = date.getDate();
+                mm = date.getMonth() + 1;
+                yyyy = date.getFullYear();
+
+                if (dd < 10) { dd = '0' + dd }
+                if (mm < 10) { mm = '0' + mm }
+
                 var assetScan = {
                     ID: $(".assets-name").attr("asset-id"),
-                    AssetLastScanDate: date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear()
+                    AssetLastScanDate: dd + "-" + mm + "-" + yyyy
                 };
                 //alert(assetScan.AssetLastScanDate);
                 var svc = new AssetsTackService();
-
                 svc.updateLastScanDate(window.localStorage.getItem("username"), window.localStorage.getItem("password"), assetScan, scanSuccess, scanFail);
 
             });
