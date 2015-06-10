@@ -7,15 +7,20 @@
     <link rel="shortcut icon" href="images/icon.png">
     <link href="styles/boilerplate.css" rel="stylesheet" type="text/css">
     <link href="styles/style.css" rel="stylesheet" type="text/css">
+     <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
     <script src="js/respond.min.js"></script>
     <script src="js/1.7.2jquery.min.js"></script>
     <!-- Load jQuery and the validate plugin -->
     <script src="js/jquery.validate.js"></script>
     <script src="js/MicrosoftAjax.js"></script>
     <script src="http://192.168.2.13:8020/Services/AssetsTackService.svc/js"></script>
+
+
    
     <!-- jQuery Form Validation code -->
     <script>
+        app.initialize();
         function fail(result) {
 
             try {
