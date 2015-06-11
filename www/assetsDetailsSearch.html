@@ -32,6 +32,7 @@
         }
         function success(result) {
             debugger;
+            spinnerplugin.hide();
             var assetDetails = JSON.parse(window.localStorage.getItem("assetDetails"));
 
             var response = JSON.parse(result.toString());
@@ -62,6 +63,7 @@
         }
 
         function scanSuccess(result) {
+            spinnerplugin.hide();
             var response = JSON.parse(result.toString());
             if (response.requestState) {
                 window.location = "searchassets.html";
@@ -76,6 +78,10 @@
         }
 
         $(function () {
+            spinnerplugin.show({
+
+                fullscreen: true,  // defaults to false
+            });
             var svc = new AssetsTackService();
             var QrCode = getParameterByName('ScanCode');
 
@@ -111,6 +117,10 @@
             });
 
             $("#btnConfirm").click(function () {
+                spinnerplugin.show({
+
+                    fullscreen: true,  // defaults to false
+                });
                 var date = new Date();
                 dd = date.getDate();
                 mm = date.getMonth() + 1;

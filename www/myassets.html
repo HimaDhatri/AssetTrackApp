@@ -35,6 +35,7 @@
         }
         function success(result) {
             debugger;
+            spinnerplugin.hide();
             var htmlData = '';
             var response = JSON.parse(result.toString());
             if (response.requestState) {
@@ -85,6 +86,10 @@
             }
         }
         $(function () {
+            spinnerplugin.show({
+
+                fullscreen: true,  // defaults to false
+            });
             var svc = new AssetsTackService();
             var groupID = getParameterByName('groupID');
             if (groupID == undefined || groupID == '') {

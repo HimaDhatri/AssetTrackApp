@@ -53,6 +53,7 @@
             }
         }
         function success(result) {
+            spinnerplugin.hide();
             debugger;
 
             var response = JSON.parse(result.toString());
@@ -76,6 +77,7 @@
             }
         }
         function groupSuccess(result) {
+            spinnerplugin.hide();
             var htmlData = '';
             var response = JSON.parse(result.toString());
             //spinnerplugin.hide();
@@ -96,6 +98,10 @@
 
         $(function () {
             $("#datepicker").datepicker({ dateFormat: 'dd-mm-yy' });
+            spinnerplugin.show({
+
+                fullscreen: true,  // defaults to false
+            });
             var svc = new AssetsTackService();
             svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"), groupSuccess, groupFail);
             // Setup form validation on the #register-form element
@@ -187,6 +193,10 @@
             });
 
             function addAsset() {
+                spinnerplugin.show({
+
+                    fullscreen: true,  // defaults to false
+                });
                 if ($("form").valid()) {
                     $('body').off('click', '#btnSignIn', addAsset);
                     var asset = {
