@@ -87,7 +87,7 @@
                 for (var i = 0; i < groupData.length; i++) {
                     htmlData += '<option value="' + groupData[i].ID + '">' + groupData[i].AssetsGroupName + '</option>';
                 }
-                $("#selectgroup").innerHTML(htmlData);
+                $("#selectgroup").html(htmlData);
             }
             else {
                 $('body').on('click', '#btnSignIn', addAsset);
@@ -97,6 +97,7 @@
         }
 
         $(function () {
+            
             spinnerplugin.show({
 
                 fullscreen: true,  // defaults to false
