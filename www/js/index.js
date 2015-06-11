@@ -35,7 +35,6 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
         document.addEventListener("backbutton", onBackKeyDown, false);
-
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -62,19 +61,23 @@ var app = {
       });
     }
 };
+
 function onBackKeyDown() {
-    alert("hello");
+
     navigator.notification.confirm(
             'Do you want to exit!', // message
-             onConfirmation,            // callback to invoke with index of button pressed
+             onConfirm,            // callback to invoke with index of button pressed
             'AsseTrack',           // title
             ['Yes', 'No']         // buttonLabels
         );
 }
 
-function onConfirmation(buttonIndex) {
-    alert('You selected button ' + buttonIndex);
+
+
+function onConfirm(buttonIndex) {
+    //alert('You selected button ' + buttonIndex);
     if (buttonIndex == 1) {
         navigator.app.exitApp();
     }
 }
+
