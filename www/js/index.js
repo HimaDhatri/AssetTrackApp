@@ -33,7 +33,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        //app.receivedEvent('deviceready');
         document.addEventListener("backbutton", onBackKeyDown, false);        
     },
     // Update DOM on a Received Event
@@ -63,19 +63,19 @@ var app = {
 };
 
 function onBackKeyDown() {
-    alert("exit");
-    //navigator.notification.confirm(
-    //        'Do you want to exit!', // message
-    //         onConfirm,            // callback to invoke with index of button pressed
-    //        'AsseTrack',           // title
-    //        ['Yes', 'No']         // buttonLabels
-    //    );
+
+    navigator.notification.confirm(
+            'Do you want to exit!', // message
+             onConfirm,            // callback to invoke with index of button pressed
+            'AsseTrack',           // title
+            ['Yes', 'No']         // buttonLabels
+        );
 }
 
-//function onConfirm(buttonIndex) {
-//    //alert('You selected button ' + buttonIndex);
-//    if (buttonIndex == 1) {
-//        navigator.app.exitApp();
-//    }
-//}
+function onConfirm(buttonIndex) {
+    //alert('You selected button ' + buttonIndex);
+    if (buttonIndex == 1) {
+        navigator.app.exitApp();
+    }
+}
 
