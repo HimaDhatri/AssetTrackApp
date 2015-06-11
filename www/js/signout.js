@@ -22,7 +22,7 @@
         );
     }
     $("#signout").click(function () {
-        alert("check");
+        
         showConfirm();
     });
 
