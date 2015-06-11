@@ -97,11 +97,12 @@
         }
 
         $(function () {
-            $("#datepicker").datepicker({ dateFormat: 'dd-mm-yy' });
             spinnerplugin.show({
 
                 fullscreen: true,  // defaults to false
             });
+            $("#datepicker").datepicker({ dateFormat: 'dd-mm-yy' });
+            
             var svc = new AssetsTackService();
             svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"), groupSuccess, groupFail);
             // Setup form validation on the #register-form element
