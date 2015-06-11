@@ -87,7 +87,7 @@
                 for (var i = 0; i < groupData.length; i++) {
                     htmlData += '<option value="' + groupData[i].ID + '">' + groupData[i].AssetsGroupName + '</option>';
                 }
-                $("#selectgroup").html(htmlData);
+                $("#selectgroup").innerHTML(htmlData);
             }
             else {
                 $('body').on('click', '#btnSignIn', addAsset);
