@@ -34,7 +34,7 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        document.addEventListener("backbutton", onBackKeyDown, false);
+        document.addEventListener("backbutton", onBackKeyDown, false);        
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -63,21 +63,19 @@ var app = {
 };
 
 function onBackKeyDown() {
-
-    navigator.notification.confirm(
-            'Do you want to exit!', // message
-             onConfirm,            // callback to invoke with index of button pressed
-            'AsseTrack',           // title
-            ['Yes', 'No']         // buttonLabels
-        );
+    alert("exit");
+    //navigator.notification.confirm(
+    //        'Do you want to exit!', // message
+    //         onConfirm,            // callback to invoke with index of button pressed
+    //        'AsseTrack',           // title
+    //        ['Yes', 'No']         // buttonLabels
+    //    );
 }
 
-
-
-function onConfirm(buttonIndex) {
-    //alert('You selected button ' + buttonIndex);
-    if (buttonIndex == 1) {
-        navigator.app.exitApp();
-    }
-}
+//function onConfirm(buttonIndex) {
+//    //alert('You selected button ' + buttonIndex);
+//    if (buttonIndex == 1) {
+//        navigator.app.exitApp();
+//    }
+//}
 
