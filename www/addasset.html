@@ -77,11 +77,13 @@
             }
         }
         function groupSuccess(result) {
+            alert("success");
             spinnerplugin.hide();
             var htmlData = '';
             var response = JSON.parse(result.toString());
             //spinnerplugin.hide();
             if (response.requestState) {
+                alert("response got");
                 var groupData = JSON.parse(response.result.toString());
                 htmlData = '<option value=""> Select group </option>';
                 for (var i = 0; i < groupData.length; i++) {
