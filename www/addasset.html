@@ -97,7 +97,7 @@
         }
 
         $(function () {
-            
+            alert("check");
             spinnerplugin.show({
 
                 fullscreen: true,  // defaults to false
@@ -194,88 +194,55 @@
                 }
             });
 
-            //function addAsset() {
-            //    spinnerplugin.show({
+            function addAsset() {
+                alert("check");
+                spinnerplugin.show({
 
-            //        fullscreen: true,  // defaults to false
-            //    });
-            //    if ($("form").valid()) {
-            //        $('body').off('click', '#btnSignIn', addAsset);
-            //        var asset = {
-            //            //AssetsName: $('#Name').val(),
-            //            //AssetGroupID: Number($('#selectgroup').val()),
-            //            //AssetPurchaseDate: $('#datepicker').val(),
-            //            //AssetSerialNumber: $('#slnumb').val(),
-            //            //AssetPurchaseValue: $('#purchasevalue').val(),
-            //            //AssetImageData: "", //$('#choosefile').val()
-            //            //MethodOfDepreciation: $('#MethodOfDepreciation').val(),
-            //            //DepreciationRate: Number($('#DepreciationRate').val()),
-            //            //Location: $('#Location').val(),
-            //            //SubLocation: Number($('#SubLocation').val()),
-            //            //SubSubLocation: $('#SubSubLocation').val(),
-            //            //UsefulLife: $('#UsefulLife').val()
+                    fullscreen: true,  // defaults to false
+                });
+                alert("check");
+                if ($("form").valid()) {
+                    $('body').off('click', '#btnSignIn', addAsset);
+                    var asset = {
+                        //AssetsName: $('#Name').val(),
+                        //AssetGroupID: Number($('#selectgroup').val()),
+                        //AssetPurchaseDate: $('#datepicker').val(),
+                        //AssetSerialNumber: $('#slnumb').val(),
+                        //AssetPurchaseValue: $('#purchasevalue').val(),
+                        //AssetImageData: "", //$('#choosefile').val()
+                        //MethodOfDepreciation: $('#MethodOfDepreciation').val(),
+                        //DepreciationRate: Number($('#DepreciationRate').val()),
+                        //Location: $('#Location').val(),
+                        //SubLocation: Number($('#SubLocation').val()),
+                        //SubSubLocation: $('#SubSubLocation').val(),
+                        //UsefulLife: $('#UsefulLife').val()
 
-            //            AssetsName: $('#Name').val(),
-            //            AssetGroupID: Number($('#selectgroup').val()),
-            //            AssetPurchaseDate: $('#datepicker').val(),
-            //            AssetSerialNumber: $('#slnumb').val(),
-            //            AssetPurchaseValue: Number($('#purchasevalue').val()),
-            //            AssetImageData: $('#assetImage').attr("src"),
-            //            MethodOfDepreciation: $('#MethodOfDepreciation').val(),
-            //            DepreciationRate: $('#DepreciationRate').val(),
-            //            Location: $('#Location').val(),
-            //            SubLocation: $('#SubLocation').val(),
-            //            SubSubLocation: $('#SubSubLocation').val(),
-            //            UsefulLife: $('#UsefulLife').val(),
-            //            ResidualValue: $('#ResidualValue').val(),
-            //            ResidualPercentage: $('#ResidualPercentage').val()
-            //        }
-            //        var svc = new AssetsTackService();
-            //        //svc.GetAllAssetsGroups('harish', 'hari@4321', success, fail);
-            //        svc.addAssets(window.localStorage.getItem("username"), window.localStorage.getItem("password"), asset, success, fail);
-            //    }
-            //}
-
-           // $('body').on('click', '#btnSignIn', addAsset);
-
-            $("#btnSignIn").click(function () {
-            if ($("form").valid()) {
-                //$('body').off('click', '#btnSignIn', addAsset);
-                var asset = {
-                    //AssetsName: $('#Name').val(),
-                    //AssetGroupID: Number($('#selectgroup').val()),
-                    //AssetPurchaseDate: $('#datepicker').val(),
-                    //AssetSerialNumber: $('#slnumb').val(),
-                    //AssetPurchaseValue: $('#purchasevalue').val(),
-                    //AssetImageData: "", //$('#choosefile').val()
-                    //MethodOfDepreciation: $('#MethodOfDepreciation').val(),
-                    //DepreciationRate: Number($('#DepreciationRate').val()),
-                    //Location: $('#Location').val(),
-                    //SubLocation: Number($('#SubLocation').val()),
-                    //SubSubLocation: $('#SubSubLocation').val(),
-                    //UsefulLife: $('#UsefulLife').val()
-
-                    AssetsName: $('#Name').val(),
-                    AssetGroupID: Number($('#selectgroup').val()),
-                    AssetPurchaseDate: $('#datepicker').val(),
-                    AssetSerialNumber: $('#slnumb').val(),
-                    AssetPurchaseValue: Number($('#purchasevalue').val()),
-                    AssetImageData: $('#assetImage').attr("src"),
-                    MethodOfDepreciation: $('#MethodOfDepreciation').val(),
-                    DepreciationRate: $('#DepreciationRate').val(),
-                    Location: $('#Location').val(),
-                    SubLocation: $('#SubLocation').val(),
-                    SubSubLocation: $('#SubSubLocation').val(),
-                    UsefulLife: $('#UsefulLife').val(),
-                    ResidualValue: $('#ResidualValue').val(),
-                    ResidualPercentage: $('#ResidualPercentage').val()
+                        AssetsName: $('#Name').val(),
+                        AssetGroupID: Number($('#selectgroup').val()),
+                        AssetPurchaseDate: $('#datepicker').val(),
+                        AssetSerialNumber: $('#slnumb').val(),
+                        AssetPurchaseValue: Number($('#purchasevalue').val()),
+                        AssetImageData: $('#assetImage').attr("src"),
+                        MethodOfDepreciation: $('#MethodOfDepreciation').val(),
+                        DepreciationRate: $('#DepreciationRate').val(),
+                        Location: $('#Location').val(),
+                        SubLocation: $('#SubLocation').val(),
+                        SubSubLocation: $('#SubSubLocation').val(),
+                        UsefulLife: $('#UsefulLife').val(),
+                        ResidualValue: $('#ResidualValue').val(),
+                        ResidualPercentage: $('#ResidualPercentage').val()
+                    }
+                    var svc = new AssetsTackService();
+                    //svc.GetAllAssetsGroups('harish', 'hari@4321', success, fail);
+                    svc.addAssets(window.localStorage.getItem("username"), window.localStorage.getItem("password"), asset, success, fail);
                 }
-                var svc = new AssetsTackService();
-                //svc.GetAllAssetsGroups('harish', 'hari@4321', success, fail);
-                svc.addAssets(window.localStorage.getItem("username"), window.localStorage.getItem("password"), asset, success, fail);
             }
 
-            });
+            $('body').on('click', '#btnSignIn', addAsset);
+
+            //$("#btnSignIn").click(function () {
+
+            //});
 
         });
 
