@@ -62,7 +62,7 @@
                 window.location = "dashboard.html";
             }
             else {
-                $('body').on('click', '#btnSave', addAsset);
+                $('body').on('click', '#btnSignIn', addAsset);
                 $("#signInError").show();
             }
         }
@@ -90,7 +90,7 @@
                 $("#selectgroup").html(htmlData);
             }
             else {
-                $('body').on('click', '#btnSave', addAsset);
+                $('body').on('click', '#btnSignIn', addAsset);
                 alert(response.result.toString());
             }
 
@@ -200,7 +200,7 @@
                     fullscreen: true,  // defaults to false
                 });
                 if ($("form").valid()) {
-                    $('body').off('click', '#btnSave', addAsset);
+                    $('body').off('click', '#btnSignIn', addAsset);
                     var asset = {
                         //AssetsName: $('#Name').val(),
                         //AssetGroupID: Number($('#selectgroup').val()),
@@ -236,9 +236,9 @@
                 }
             }
 
-            $('body').on('click', '#btnSave', addAsset);
+            $('body').on('click', '#btnSignIn', addAsset);
 
-            //$("#btnSave").click(function () {
+            //$("#btnSignIn").click(function () {
 
             //});
 
@@ -377,7 +377,7 @@
                 &nbsp; <b>Use Geolocation</b>
             </div>-->
 
-            <input id="btnSave" type="button" class="addgroup3" value="Save">
+            <input id="btnSignIn" type="button" class="addgroup3" value="Save">
         </div>
 
     </div>
