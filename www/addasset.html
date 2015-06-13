@@ -69,7 +69,7 @@
 
         function groupFail(result) {
             //spinnerplugin.hide();
-            alert("fail");
+            
             try {
                 alert("fail" + result);
             }
@@ -143,7 +143,13 @@
         }
 
         $(function () {
+            spinnerplugin.show({
 
+                fullscreen: true,  // defaults to false
+            });
+            //alert("after datePicker");
+            var svc = new AssetsTackService();
+            svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"), groupSuccess, groupFail);
             //$("#datepicker").datepicker({ dateFormat: 'dd-mm-yyyy' });
             
             // Setup form validation on the #register-form element
@@ -237,13 +243,13 @@
 
             });
 
-            spinnerplugin.show({
+            //spinnerplugin.show({
 
-                fullscreen: true,  // defaults to false
-            });
-            //alert("after datePicker");
-            var svc = new AssetsTackService();
-            svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"), groupSuccess, groupFail);
+            //    fullscreen: true,  // defaults to false
+            //});
+            ////alert("after datePicker");
+            //var svc = new AssetsTackService();
+            //svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"), groupSuccess, groupFail);
 
             $('body').on('click', '#btnSignIn', addAsset);
 
