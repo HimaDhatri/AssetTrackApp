@@ -409,7 +409,7 @@ object, embed, video {
 
 .contentbox2 {
     width: 100%;
-    height: auto;
+    height: 45px;
     float: left;
     background-color: #303747;
     border-top: solid #1d1d23;
@@ -1315,6 +1315,7 @@ display: none;
         margin-right: 3%;
         color: #FFF;
         font-size: 1.2em;
+        text-align:right;
     }
 
     .bin_place2 {
