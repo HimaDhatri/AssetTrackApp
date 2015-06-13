@@ -143,17 +143,11 @@
         }
 
         $(function () {
-            spinnerplugin.show({
 
-                fullscreen: true,  // defaults to false
-            });
-            //alert("after datePicker");
-            var svc = new AssetsTackService();
-            svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"), groupSuccess, groupFail);
             //$("#datepicker").datepicker({ dateFormat: 'dd-mm-yyyy' });
             
             // Setup form validation on the #register-form element
-            alert("after service call");
+           
             $("form").validate({
 
                 // Specify the validation rules
@@ -247,9 +241,9 @@
 
             //    fullscreen: true,  // defaults to false
             //});
-            ////alert("after datePicker");
-            //var svc = new AssetsTackService();
-            //svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"), groupSuccess, groupFail);
+           
+            var svc = new AssetsTackService();
+            svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"), groupSuccess, groupFail);
 
             $('body').on('click', '#btnSignIn', addAsset);
 
