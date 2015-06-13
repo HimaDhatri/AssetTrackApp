@@ -106,6 +106,7 @@
             //    fullscreen: true,  // defaults to false
             //});
             alert("before datepicker");
+            alert($("#datepicker").datepicker({ dateFormat: 'dd-mm-yyyy' }));
             $("#datepicker").datepicker({ dateFormat: 'dd-mm-yyyy' });
             alert("after datePicker");
             var svc = new AssetsTackService();
