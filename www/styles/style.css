@@ -1345,7 +1345,7 @@ display: none;
         width: 97%;
         height: 40px;
         background-color: #FFF;
-        /*text-align: center;*/
+        text-align: center;
         color: #03bdd9;
         font-size: 1.5em;
         padding-top: 3%;
@@ -1355,7 +1355,7 @@ display: none;
 
     .arrow {
         float: left;
-        margin-right: 21%;
+        /*margin-right: 21%;*/
     }
 
     .assetbox1 {
