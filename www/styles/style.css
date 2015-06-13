@@ -398,7 +398,7 @@ object, embed, video {
 
 .contentbox1 {
     width: 100%;
-    height: 45px;
+    height: auto;
     float: left;
     background-color: #303747;
     border-top: solid #1d1d23;
@@ -409,7 +409,7 @@ object, embed, video {
 
 .contentbox2 {
     width: 100%;
-    height: 45px;
+    height: auto;
     float: left;
     background-color: #303747;
     border-top: solid #1d1d23;
@@ -419,10 +419,11 @@ object, embed, video {
 }
 
 .groupname {
-    width: 60%;
+    width: 42%;
   float: left;
   margin-left: 3%;
-  margin-top: 2.8%;
+  margin-top: 3%;
+  margin-bottom: 3%;
   font-size: 1em;
 }
 
@@ -469,8 +470,10 @@ object, embed, video {
     float: right;
     margin-top: 3%;
     margin-right: 3%;
+    margin-bottom:3%;
     color: #FFF;
     font-size: 1.2em;
+    width:48%;
 }
 
 .bin_place2 {
