@@ -11,19 +11,20 @@
     <link href="styles/boilerplate.css" rel="stylesheet" type="text/css">
     <link href="styles/style.css" rel="stylesheet" type="text/css">
     <link href="styles/all.min.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script src="js/respond.min.js"></script>
+   <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    
     <script src="js/1.7.2jquery.min.js"></script>
+    <script src="styles/respond.min.js"></script>
+    <script src="js/MicrosoftAjax.js"></script>
     <script src="js/signout.js"></script>
     <!-- Load jQuery and the validate plugin -->
-    <script src="js/jquery.validate.js"></script>
-    <script type="text/javascript" src="phonegap.js"></script>
+    <script src="js/jquery.validate.js"></script>    
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
     <!-- jQuery Form Validation code -->
-    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
-    <script src="js/MicrosoftAjax.js"></script>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />    
     <script src="http://192.168.2.13:8020/Services/AssetsTackService.svc/js"></script>
     <!--<script src="http://117.247.182.228:8010/Services/AssetsTackService.svc/js"></script>-->
+    <script type="text/javascript" src="phonegap.js"></script>
     
     <script>
 
@@ -238,14 +239,13 @@
                 }
 
             });
-
+                     
+            var svc = new AssetsTackService();
             spinnerplugin.show({
 
                 fullscreen: true,  // defaults to false
             });
-           
-            var svc = new AssetsTackService();
-            svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"), groupSuccess, groupFail);
+           svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"), groupSuccess, groupFail);
 
             $('body').on('click', '#btnSignIn', addAsset);
 
