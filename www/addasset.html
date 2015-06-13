@@ -79,7 +79,7 @@
         }
         function groupSuccess(result) {
             alert("success");
-            //spinnerplugin.hide();
+            spinnerplugin.hide();
             var htmlData = '';
             var response = JSON.parse(result.toString());
             //spinnerplugin.hide();
@@ -237,10 +237,10 @@
 
             });
 
-            //spinnerplugin.show({
+            spinnerplugin.show({
 
-            //    fullscreen: true,  // defaults to false
-            //});
+                fullscreen: true,  // defaults to false
+            });
            
             var svc = new AssetsTackService();
             svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"), groupSuccess, groupFail);
