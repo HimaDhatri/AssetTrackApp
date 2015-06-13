@@ -106,11 +106,13 @@
                 fullscreen: true,  // defaults to false
             });
             $("#datepicker").datepicker({ dateFormat: 'dd-mm-yy' });
-            alert("date");
+            //alert("date");
             var svc = new AssetsTackService();
             svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"), groupSuccess, groupFail);
             // Setup form validation on the #register-form element
+            alert("after service call");
             $("form").validate({
+                
                 // Specify the validation rules
                 rules: {
                     Name: {
