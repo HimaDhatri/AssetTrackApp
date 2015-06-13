@@ -243,7 +243,7 @@
             });
            
             var svc = new AssetsTackService();
-            svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"), groupSuccess, groupFail);
+            svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"),window.localStorage.getItem("siteName"), groupSuccess, groupFail);
 
             $('body').on('click', '#btnSignIn', addAsset);
 

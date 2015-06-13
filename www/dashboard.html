@@ -57,7 +57,7 @@
             });
             var svc = new AssetsTackService();
 
-            svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"), success, fail);
+            svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"),window.localStorage.getItem("siteName"), success, fail);
         });
     </script>
 </head>

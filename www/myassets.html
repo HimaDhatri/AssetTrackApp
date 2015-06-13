@@ -100,7 +100,7 @@
                 groupName = '';
             }
             $('#groupHeader').html(groupName);
-            svc.GetAssetsByGroup(window.localStorage.getItem("username"), window.localStorage.getItem("password"), groupID, success, fail);
+            svc.GetAssetsByGroup(window.localStorage.getItem("username"), window.localStorage.getItem("password"),window.localStorage.getItem("siteName"), groupID, success, fail);
         });
     </script>
 </head>
