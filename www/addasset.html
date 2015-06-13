@@ -106,7 +106,7 @@
             //    fullscreen: true,  // defaults to false
             //});
             alert("before datepicker");
-            $("#datepicker").datepicker({ dateFormat: 'dd-mm-yy' });
+           // $("#datepicker").datepicker({ dateFormat: 'dd-mm-yy' });
             alert("after datePicker");
             var svc = new AssetsTackService();
             svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"), groupSuccess, groupFail);
