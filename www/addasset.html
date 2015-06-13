@@ -79,7 +79,7 @@
         }
         function groupSuccess(result) {
             alert("success");
-            spinnerplugin.hide();
+            //spinnerplugin.hide();
             var htmlData = '';
             var response = JSON.parse(result.toString());
             //spinnerplugin.hide();
@@ -101,12 +101,12 @@
 
         $(function () {
             alert("loaded");
-            spinnerplugin.show({
+            //spinnerplugin.show({
 
-                fullscreen: true,  // defaults to false
-            });
+            //    fullscreen: true,  // defaults to false
+            //});
             $("#datepicker").datepicker({ dateFormat: 'dd-mm-yy' });
-            //alert("date");
+            alert("date");
             var svc = new AssetsTackService();
             svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"), groupSuccess, groupFail);
             // Setup form validation on the #register-form element
