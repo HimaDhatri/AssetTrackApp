@@ -11,10 +11,9 @@
     <link href="styles/boilerplate.css" rel="stylesheet" type="text/css">
     <link href="styles/style.css" rel="stylesheet" type="text/css">
     <link href="styles/all.min.css" rel="stylesheet" type="text/css">
-   <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script src="js/respond.min.js"></script>
     <script src="js/1.7.2jquery.min.js"></script>
-    <script src="styles/respond.min.js"></script>
     <script src="js/signout.js"></script>
     <!-- Load jQuery and the validate plugin -->
     <script src="js/jquery.validate.js"></script>    
@@ -239,13 +238,14 @@
                 }
 
             });
-                     
-            var svc = new AssetsTackService();
+            alert("spinner start");
             spinnerplugin.show({
 
                 fullscreen: true,  // defaults to false
             });
-           svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"), groupSuccess, groupFail);
+           
+            var svc = new AssetsTackService();
+            svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"), groupSuccess, groupFail);
 
             $('body').on('click', '#btnSignIn', addAsset);
 
