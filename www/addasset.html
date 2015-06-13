@@ -69,7 +69,7 @@
         }
 
         function groupFail(result) {
-            //spinnerplugin.hide();
+          
             
             try {
                 alert("fail" + result);
@@ -80,10 +80,10 @@
         }
         function groupSuccess(result) {
             alert("success");
-            spinnerplugin.hide();
+           // spinnerplugin.hide();
             var htmlData = '';
             var response = JSON.parse(result.toString());
-            //spinnerplugin.hide();
+           
             if (response.requestState) {
                 alert("response got");
                 var groupData = JSON.parse(response.result.toString());
@@ -101,10 +101,7 @@
         }
         function addAsset() {
             alert("check");
-            spinnerplugin.show({
-
-                fullscreen: true,  // defaults to false
-            });
+          
             alert("check");
             if ($("form").valid()) {
                 $('body').off('click', '#btnSignIn', addAsset);
@@ -137,6 +134,10 @@
                     ResidualValue: $('#ResidualValue').val(),
                     ResidualPercentage: $('#ResidualPercentage').val()
                 }
+                spinnerplugin.show({
+
+                    fullscreen: true,  // defaults to false
+                });
                 var svc = new AssetsTackService();
                 //svc.GetAllAssetsGroups('harish', 'hari@4321', success, fail);
                 svc.addAssets(window.localStorage.getItem("username"), window.localStorage.getItem("password"), asset, success, fail);
@@ -144,9 +145,9 @@
         }
 
         $(function () {
-
-            //$("#datepicker").datepicker({ dateFormat: 'dd-mm-yyyy' });
-            
+            alert("load");
+            $("#datepicker").datepicker({ dateFormat: 'dd-mm-yyyy' });
+            alert("datepicker");
             // Setup form validation on the #register-form element
            
             $("form").validate({
@@ -238,10 +239,10 @@
 
             });
 
-            spinnerplugin.show({
+            //spinnerplugin.show({
 
-                fullscreen: true,  // defaults to false
-            });
+            //    fullscreen: true,  // defaults to false
+            //});
            
             var svc = new AssetsTackService();
             svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"), groupSuccess, groupFail);
@@ -333,7 +334,7 @@
                     <input name="slnumb" id="slnumb" type="text" class="txt_box9" placeholder="S/N">
                 </div>
 
-                <input type="date" name="datepicker" id="datepicker" placeholder="Date of Purchase">
+                <input type="text" name="datepicker" id="datepicker" placeholder="Date of Purchase">
 
                 <div class="name">
                     <input name="purchasevalue" id="purchasevalue" type="text" class="txt_box9" placeholder="Purchase Value">
