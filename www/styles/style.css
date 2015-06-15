@@ -318,7 +318,7 @@ object, embed, video {
 
 .header_btns {
     float: right;
-    /*width: 25%;*/
+    width: 25%;
     margin-right: 5%;
 }
 
@@ -514,7 +514,7 @@ object, embed, video {
 
 .arrow {
     float: left;
-    /*margin-right: 22%;*/
+    margin-right: 22%;
 }
 
 .assetbox1 {
