@@ -79,13 +79,13 @@
             }
         }
         function groupSuccess(result) {
-            //alert("success");
+           
             //spinnerplugin.hide();
             var htmlData = '';
             var response = JSON.parse(result.toString());
            
             if (response.requestState) {
-                alert("response got");
+               
                 var groupData = JSON.parse(response.result.toString());
                 htmlData = '<option value=""> Select group </option>';
                 for (var i = 0; i < groupData.length; i++) {
@@ -100,9 +100,7 @@
 
         }
         function addAsset() {
-            alert("check");
-          
-            alert("check");
+           
             if ($("form").valid()) {
                 $('body').off('click', '#btnSignIn', addAsset);
                 var asset = {
