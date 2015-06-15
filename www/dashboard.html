@@ -9,7 +9,7 @@
     <link href="styles/boilerplate.css" rel="stylesheet" type="text/css">
     <link href="styles/style.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/dashboard.js"></script>
     <script src="js/1.7.2jquery.min.js"></script>
     <script src="styles/respond.min.js"></script>
     <script src="js/MicrosoftAjax.js"></script>
@@ -17,7 +17,7 @@
     <!--<script src="http://117.247.182.228:8010/Services/AssetsTackService.svc/js"></script>-->
     <script src="http://192.168.2.13:8020/Services/AssetsTackService.svc/js"></script>
     <script>
-        app.initialize();
+        bindEvents();
         function fail(result) {
             //spinnerplugin.hide();
             try {
