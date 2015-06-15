@@ -112,16 +112,15 @@
             //$("#assetImg").attr("src", getParameterByName('AssetImage'));
 
             $('#assetsID').val(assetDetails.ID);
-            $('#Name').val(assetDetails.AssetsName);
-            $(".assets-Group").html(assetDetails.AssetGroup);
+            $('#Name').val(assetDetails.AssetsName);            
             $('#datepicker').val(assetDetails.PurchaseDate);
             $('#purchasevalue').val(assetDetails.AssetPurchaseValue);
             $("#slnumb").val(assetDetails.AssetSerialNumber);
             $('#MethodOfDepreciation').val(assetDetails.MethodOfDepreciation);
-            $('#DepreciationRate').val(getParameterByName('DepreciationRate'));
+            $('#DepreciationRate').val(assetDetails.DepreciationRate);
             $('#Location').val(assetDetails.Location);
             $('#SubLocation').val(assetDetails.SubLocation);
-            $('#SubSubLocation').val(html(assetDetails.SubSubLocation);
+            $('#SubSubLocation').val(assetDetails.SubSubLocation);
             $('#UsefulLife').val(assetDetails.UsefulLife);
             $('#ResidualValue').val(assetDetails.ResidualValue);
             $('#ResidualPercentage').val(assetDetails.ResidualPercentage);
