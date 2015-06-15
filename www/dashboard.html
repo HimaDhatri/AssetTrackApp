@@ -17,24 +17,6 @@
     <!--<script src="http://117.247.182.228:8010/Services/AssetsTackService.svc/js"></script>-->
     <script src="http://192.168.2.13:8020/Services/AssetsTackService.svc/js"></script>
     <script>
-
-        function onBackKeyDown() {
-
-            navigator.notification.confirm(
-                    'Do you want to exit!', // message
-                     onConfirm,            // callback to invoke with index of button pressed
-                    'AsseTrack',           // title
-                    ['Yes', 'No']         // buttonLabels
-                );
-        }
-
-        function onConfirm(buttonIndex) {
-            //alert('You selected button ' + buttonIndex);
-            if (buttonIndex == 1) {
-                navigator.app.exitApp();
-            }
-        }
-
         function fail(result) {
             //spinnerplugin.hide();
             try {
