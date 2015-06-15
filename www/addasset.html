@@ -54,7 +54,7 @@
             }
         }
         function success(result) {
-            spinnerplugin.hide();
+            //spinnerplugin.hide();
             debugger;
 
             var response = JSON.parse(result.toString());
@@ -80,7 +80,7 @@
         }
         function groupSuccess(result) {
             //alert("success");
-            spinnerplugin.hide();
+            //spinnerplugin.hide();
             var htmlData = '';
             var response = JSON.parse(result.toString());
            
@@ -134,10 +134,10 @@
                     ResidualValue: $('#ResidualValue').val(),
                     ResidualPercentage: $('#ResidualPercentage').val()
                 }
-                spinnerplugin.show({
+                //spinnerplugin.show({
 
-                    fullscreen: true,  // defaults to false
-                });
+                //    fullscreen: true,  // defaults to false
+                //});
                 var svc = new AssetsTackService();
                 //svc.GetAllAssetsGroups('harish', 'hari@4321', success, fail);
                 svc.addAssets(window.localStorage.getItem("username"), window.localStorage.getItem("password"), asset, success, fail);
@@ -237,10 +237,10 @@
 
             });
             
-            spinnerplugin.show({
+            //spinnerplugin.show({
 
-                fullscreen: true,  // defaults to false
-            });
+            //    fullscreen: true,  // defaults to false
+            //});
            
             var svc = new AssetsTackService();
             svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"),window.localStorage.getItem("siteName"), groupSuccess, groupFail);
