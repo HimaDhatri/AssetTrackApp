@@ -59,7 +59,7 @@
         }
 
         function success(result) {
-            spinnerplugin.hide();
+            //spinnerplugin.hide();
             var response = JSON.parse(result.toString());
             if (response.requestState) {
                 $("#signInError").hide();
@@ -80,10 +80,11 @@
             }
         }
         function groupSuccess(result) {
-            spinnerplugin.hide();
+            alert("success");
+            //spinnerplugin.hide();
             var htmlData = '';
             var response = JSON.parse(result.toString());
-            //spinnerplugin.hide();
+           
             if (response.requestState) {
                 var groupData = JSON.parse(response.result.toString());
                 htmlData = '<option value=""> Select group </option>';
@@ -100,10 +101,10 @@
 
         $(function () {
             $("#datepicker").datepicker({ dateFormat: 'dd-mm-yy' });
-            spinnerplugin.show({
+            //spinnerplugin.show({
 
-                fullscreen: true,  // defaults to false
-            });
+            //    fullscreen: true,  // defaults to false
+            //});
             var svc = new AssetsTackService();
             svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"),window.localStorage.getItem("siteName"), groupSuccess, groupFail);
             //$("#assetImg").attr("src", getParameterByName('AssetImage'));
@@ -216,10 +217,10 @@
             });
 
             $("#btnSignIn").click(function () {
-                spinnerplugin.show({
+                //spinnerplugin.show({
 
-                    fullscreen: true,  // defaults to false
-                });
+                //    fullscreen: true,  // defaults to false
+                //});
                 if ($("form").valid()) {
                     var asset = {
                         ID: Number($('#assetsID').val()),
