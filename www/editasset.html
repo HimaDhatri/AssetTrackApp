@@ -109,8 +109,7 @@
             svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"), window.localStorage.getItem("siteName"), groupSuccess, groupFail);
             
             //$("#assetImg").attr("src", getParameterByName('AssetImage'));
-            var assetDetails = JSON.parse(window.localStorage.getItem("assetDetails"));
-            //alert(assetDetails.AssetGroup + "   " + assetDetails.AssetsName);
+            var assetDetails = JSON.parse(window.localStorage.getItem("assetDetails"));            
             $('#assetsID').val(assetDetails.ID);
             $("#selectgroup").val(assetDetails.AssetGroup);
             $('#Name').val(assetDetails.AssetsName);            
