@@ -80,7 +80,7 @@
             }
         }
         function groupSuccess(result) {
-           
+            alert("success");
             //spinnerplugin.hide();
             var htmlData = '';
             var response = JSON.parse(result.toString());
@@ -105,10 +105,10 @@
 
             //    fullscreen: true,  // defaults to false
             //});
+            var assetDetails = JSON.parse(window.localStorage.getItem("assetDetails"));
             var svc = new AssetsTackService();
             svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"), window.localStorage.getItem("siteName"), groupSuccess, groupFail);
-
-            var assetDetails = JSON.parse(window.localStorage.getItem("assetDetails"));
+            
             //$("#assetImg").attr("src", getParameterByName('AssetImage'));
 
             $('#assetsID').val(assetDetails.ID);
