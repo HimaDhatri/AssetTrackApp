@@ -308,7 +308,7 @@ object, embed, video {
     width: 80%;
     height: 40px;
     background-color: #FFF;
-    text-align: center;
+    /*text-align: center;*/
     color: #03bdd9;
     font-size: 1.2em;
     padding-top: 3%;
