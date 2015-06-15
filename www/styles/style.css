@@ -514,7 +514,7 @@ object, embed, video {
 
 .arrow {
     float: left;
-    margin-right: 22%;
+    /*margin-right: 22%;*/
 }
 
 .assetbox1 {
@@ -1355,7 +1355,7 @@ display: none;
 
     .arrow {
         float: left;
-        /*margin-right: 21%;*/
+        margin-right: 21%;
     }
 
     .assetbox1 {
