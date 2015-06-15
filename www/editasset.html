@@ -106,21 +106,25 @@
             //    fullscreen: true,  // defaults to false
             //});
             var svc = new AssetsTackService();
-            svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"),window.localStorage.getItem("siteName"), groupSuccess, groupFail);
+            svc.GetAllAssetsGroups(window.localStorage.getItem("username"), window.localStorage.getItem("password"), window.localStorage.getItem("siteName"), groupSuccess, groupFail);
+
+            var assetDetails = JSON.parse(window.localStorage.getItem("assetDetails"));
             //$("#assetImg").attr("src", getParameterByName('AssetImage'));
-            $('#assetsID').val(getParameterByName('ID'));
-            $('#Name').val(getParameterByName('AssetsName'));
-            $('#datepicker').val(getParameterByName('AssetPurchaseDate'));
-            $('#purchasevalue').val(getParameterByName('AssetPurchaseValue'));
-            $("#slnumb").val(getParameterByName('AssetSerialNumber'));
-            $('#MethodOfDepreciation').val(getParameterByName('MethodOfDepreciation'));
+
+            $('#assetsID').val(assetDetails.ID);
+            $('#Name').val(assetDetails.AssetsName);
+            $(".assets-Group").html(assetDetails.AssetGroup);
+            $('#datepicker').val(assetDetails.PurchaseDate);
+            $('#purchasevalue').val(assetDetails.AssetPurchaseValue);
+            $("#slnumb").val(assetDetails.AssetSerialNumber);
+            $('#MethodOfDepreciation').val(assetDetails.MethodOfDepreciation);
             $('#DepreciationRate').val(getParameterByName('DepreciationRate'));
-            $('#Location').val(getParameterByName('Location'));
-            $('#SubLocation').val(getParameterByName('SubLocation'));
-            $('#SubSubLocation').val(getParameterByName('SubSubLocation'));
-            $('#UsefulLife').val(getParameterByName('UsefulLife'));
-            $('#ResidualValue').val(getParameterByName('ResidualValue'));
-            $('#ResidualPercentage').val(getParameterByName('ResidualPercentage'));
+            $('#Location').val(assetDetails.Location);
+            $('#SubLocation').val(assetDetails.SubLocation);
+            $('#SubSubLocation').val(html(assetDetails.SubSubLocation);
+            $('#UsefulLife').val(assetDetails.UsefulLife);
+            $('#ResidualValue').val(assetDetails.ResidualValue);
+            $('#ResidualPercentage').val(assetDetails.ResidualPercentage);
             // Setup form validation on the #register-form element
             $("form").validate({
                 // Specify the validation rules
