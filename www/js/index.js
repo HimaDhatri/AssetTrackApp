@@ -64,7 +64,7 @@ var app = {
 };
 
 function onBackKeyDown() {
-
+    alert("back");
     navigator.notification.confirm(
             'Do you want to exit!', // message
              onConfirm,            // callback to invoke with index of button pressed
